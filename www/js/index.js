@@ -20,11 +20,13 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-        var map = L.map('map').setView([51.505, -0.09], 13);
+/*        var map = L.map('map').setView([51.505, -0.09], 13);
         L.tileLayer('http://{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
         }).addTo(map);
-         
+        
+        L.marker([ 51.505, -0.09 ]).addTo(map);
+ */        
     },
     // Bind Event Listeners
     //
@@ -52,3 +54,47 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+
+/*(function() {
+var app = angular.module('app', []);
+ 
+app.controller('PropertiesCtrl', function ($scope) {
+  $scope.properties = [
+    {'lat': 51.505,
+     'lng': -0.09,
+     'name': 'First property'},
+    {'lat': 51.500,
+     'snippet': -0.08,
+     'name': 'Second property'},
+    {'lat': 51.550,
+     'lng': -0.085,
+     'name': 'Third property'}
+  ];
+});
+})();
+*/
+//(function() {
+var map = angular.module('app', ["leaflet-directive"]);
+
+function MapCtrl ($scope) {
+  angular.extend($scope, {
+    london: {
+      lat: 51.505,
+      lng: -0.09,
+      zoom: 8
+    },
+    markers: {
+    a: {'lat': 51.505,
+     'lng': -0.09,
+     'name': 'First property'},
+    b: {'lat': 51.500,
+     'lng': -0.08,
+     'name': 'Second property'},
+    c: {'lat': 51.550,
+     'lng': -0.085,
+     'name': 'Third property'}
+    }
+  });
+}
+//})();
