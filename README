@@ -1,0 +1,11 @@
+Don't forget to:
+* install phonegap (npm install -g phonegap)
+* install ripple (git clone incubator-ripple 0.9.19; patch with patch.patch included in this repo)
+* install or update Android SDK to version >= 19
+
+then you can run:
+* incubator-ripple/bin/ripple emulate
+
+and after each change to files in www/ run ./deploy-android.sh to have things deployed
+
+You need to run once 'phonegap build android'
